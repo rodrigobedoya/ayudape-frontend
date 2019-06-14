@@ -1,0 +1,112 @@
+:root {
+    --main-color: #00D0B6;
+    --secondary-color: purple;
+    --main-text-color: white;
+    --secondary-text-color: gray;
+    --send-message-form: #F5F5F5;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    font-weight: 200;
+    color: 	#3e5869;
+    background-color: gray;
+}
+
+#root {
+    height: 100%;
+}
+
+.app {
+    margin: 0 auto;
+    transform-origin: 0 0;
+    display: grid;
+    height: 100%;
+    width: 650px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 0.1fr 1fr 0.1fr 1px;
+    grid-template-areas:
+        "h"
+        "m"
+        "f";
+}
+
+.header {
+    grid-area: h;
+}
+
+.message-list {
+    grid-area: m;
+}
+
+.send-message-form {
+    grid-area: f;
+}
+
+.header{
+  background: var(--secondary-color);
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px 10px;
+}
+
+.message .message-time {
+    font-size: 11px;
+    color: var(--secondary-text-color);
+    opacity: 0.9;
+    margin-bottom: 6px;
+    grid-area: t;
+}
+.message .message-text {
+    background: var(--main-color);
+    color: var(--main-text-color);
+    display: flex;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    padding: 10px 8px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+
+.message-list {
+    padding-left: 6px;
+    width: 650px;
+    height: 100%;
+    background: white;
+}
+
+.send-message-form {
+    background: var(--send-message-form);
+    display: flex;
+}
+
+.send-message-form input {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 20px;
+    border-style: solid;
+    border-color: inherit;
+    background: var(--send-message-form);
+    font-weight: 500;
+
+}
+
+.send-message-form input:focus {
+    outline-width: 0;
+}
+
+.send-message-form input::placeholder {
+    color: var(--secondary-text-color);
+}
+
+.help-text {
+    position: absolute;
+    top: 10px;
+}
